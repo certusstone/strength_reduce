@@ -89,6 +89,12 @@ impl StrengthReducedU8 {
     pub fn get(&self) -> u8 {
         self.divisor
     }
+
+    #[inline]
+    /// Creates a new divisor instance from pre-existing data
+    pub fn from_fields(multiplier: u16, divisor: u8) -> Self {
+        Self { multiplier, divisor }
+    }
 }
 
 impl Div<StrengthReducedU8> for u8 {
@@ -170,6 +176,12 @@ macro_rules! strength_reduced_u16 {
             #[inline]
             pub fn get(&self) -> $primitive_type {
                 self.divisor
+            }
+
+            #[inline]
+            /// Creates a new divisor instance from pre-existing data
+            pub fn from_fields(multiplier: u32, divisor: $primitive_type) -> Self {
+                Self { multiplier, divisor }
             }
         }
 
@@ -260,6 +272,12 @@ macro_rules! strength_reduced_u32 {
             #[inline]
             pub fn get(&self) -> $primitive_type {
                 self.divisor
+            }
+
+            #[inline]
+            /// Creates a new divisor instance from pre-existing data
+            pub fn from_fields(multiplier: u64, divisor: $primitive_type) -> Self {
+                Self { multiplier, divisor }
             }
         }
 
@@ -352,6 +370,12 @@ macro_rules! strength_reduced_u64 {
             pub fn get(&self) -> $primitive_type {
                 self.divisor
             }
+
+            #[inline]
+            /// Creates a new divisor instance from pre-existing data
+            pub fn from_fields(multiplier: u128, divisor: $primitive_type) -> Self {
+                Self { multiplier, divisor }
+            }
         }
 
         impl Div<$struct_name> for $primitive_type {
@@ -432,6 +456,12 @@ impl StrengthReducedU128 {
     #[inline]
     pub fn get(&self) -> u128 {
         self.divisor
+    }
+
+    #[inline]
+    /// Creates a new divisor instance from pre-existing data
+    pub fn from_fields(multiplier_hi: u128, multiplier_lo: u128, divisor: u128) -> Self {
+        Self { multiplier_hi, multiplier_lo, divisor }
     }
 }
 
