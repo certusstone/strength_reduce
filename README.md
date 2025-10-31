@@ -1,3 +1,6 @@
+# Fork
+Forked to add a way to create a `StrengthReduce*` from pre-computed values. Didn't file a pull-request because my use-case is specialized.
+
 # strength_reduce
 [![crate](https://img.shields.io/crates/v/strength_reduce.svg)](https://crates.io/crates/strength_reduce)
 [![license](https://img.shields.io/crates/l/strength_reduce.svg)](https://crates.io/crates/strength_reduce)
